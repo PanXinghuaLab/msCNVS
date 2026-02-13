@@ -69,7 +69,7 @@ d <- Maskbins(c, mask_types = c("centromere","clone","contig","heterochromatin",
 e <- NormalizeData(d, method = "Normalize")
 
 # 6️⃣ Segment genome
-f <- Segment(e, alpha = alpha, undo.splits = "sdundo", nperm = 1000, undo.SD = 1, min.width = 5)
+f <- Segment(e, alpha = 0.1, undo.splits = "sdundo", nperm = 1000, undo.SD = 1, min.width = 5)
 
 # 7️⃣ Infer ploidy
 g <- InferPloidy(f, m_start = 1.5, m_end = 2.5, m_step = 0.1,
@@ -78,12 +78,12 @@ cell <- g@config$cells[1]
 PlotPloidy(g, cell)
 
 # 8️⃣ Detect CNV peaks
-h <- detect_peaks(g, peakHeightThreshold = peakHeightThreshold, plot = TRUE,
-                  adjust = adjust, minpeakdistance = 0.3)
+h <- detect_peaks(g, peakHeightThreshold = 0.01, plot = TRUE,
+                  adjust = 1, minpeakdistance = 0.3)
 
 # 9️⃣ Fit Laplace mixture model
 set.seed(123)
-m <- laplaceMM(h, core_prob = core_prob, dist_type = dist_type)
+m <- laplaceMM(h, core_prob = 0.05, dist_type = "laplace")
 
 # 🔟 Plot CNV peaks and profiles
 p <- plotPeaks(m)
