@@ -1,0 +1,19 @@
+# Suppress R CMD check notes for non-standard evaluation
+utils::globalVariables(c(
+  "abspos",
+  "nrc",
+  "color_group",
+  "loc.start",
+  "loc.end",
+  "seg.mean",
+  "x",
+  "y",
+  "group",
+  "peak_x",
+  "peak_height",
+  "density",
+  "ID",
+  "error",
+  "multiplier",
+  "offset"
+))

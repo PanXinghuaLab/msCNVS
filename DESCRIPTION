@@ -1,0 +1,39 @@
+Package: CNVision
+Title: Copy Number Variation Analysis from Sequencing Data
+Version: 0.0.1
+Authors@R: 
+    person(
+        given = "Mengchang",
+        family = "Xu",
+        email = "xumengchang962@gmail.com",
+        role = c("aut", "cre")
+    )
+Author: Mengchang Xu [aut, cre]
+Maintainer: Mengchang Xu <xumengchang962@gmail.com>
+Description: CNVision provides tools for copy number variation (CNV) detection 
+    and visualization from sequencing data, including read counting, normalization, 
+    segmentation, ploidy inference, and visualization.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 3.5.0)
+Imports:
+    mclust,
+    ggplot2,
+    DNAcopy,
+    GenomicRanges,
+    GenomeInfoDb,
+    BiocGenerics,
+    IRanges,
+    S4Vectors,
+    Rsamtools,
+    SummarizedExperiment,
+    data.table,
+    dplyr,
+    magrittr,
+    patchwork,
+    pracma,
+    GenomicAlignments,
+    methods

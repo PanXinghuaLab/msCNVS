@@ -1,0 +1,9 @@
+^CNVision\.Rproj$
+^\.Rproj\.user$
+^\.DS_Store$
+^\.Rhistory$
+^\.Rapp\.history$
+^\.RData$
+^\.git$
+^\.gitignore$
+^\.\.Rcheck$
